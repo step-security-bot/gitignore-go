@@ -1,0 +1,15 @@
+---
+image: 'archlinux'
+packages:
+  - 'go'
+  - 'make'
+sources:
+  - 'https://git.sr.ht/~jamesponddotco/gitignore-go'
+tasks:
+  - lint: |
+      cd gitignore-go
+      export PATH="${HOME}/go/bin:${PATH}"
+      make lint
+  - test: |
+      cd gitignore-go
+      make test
